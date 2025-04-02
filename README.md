@@ -13,3 +13,8 @@ SKY_L2 - Introduction to RISC-V
 
 
 clock count, clock%,clock ratio....+ %dff
+
+
+standard cell placed in placement stage not in floorplan....in floorplan die,core area, utility factor, aspect ratio.
+i/p o/p cells,pg grid creation for power distribution network, macro cell placement
+openlane has lot of switches controlling the flow...instead of using direct run_floorplan
