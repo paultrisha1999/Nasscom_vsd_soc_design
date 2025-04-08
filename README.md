@@ -28,10 +28,10 @@ A 5-day learning journey into the world of open-source digital design, focusing 
   - CTS (Clock Tree Synthesis)
   - Routing
   - Sign-off (DRC, LVS, STA)
-  - 
+
 ## LAB : SKY130_D1_SK4 - Synthesis using Yosys
 
-- First, navigate to the design directory:cd ~/Desktop/work/tools/openlane_working_dir/openlane/design/picorv32a
+- First, navigate to the design directory:cd ~/Desktop/work/tools/openlane_working_dir/openlane/design/picorv32a  and then docker command is used to enter the bash. ./flows.tcl -interactive is used to run the interactive (step by step mode) package require openlane 0.9 it will import the 0.9 openlane package. prep -design picorv32a it will prepare the implementation of picorv32a design run_synthesis it will run the yosys and abc synthesis
 
 
 📷 *[Add your Day 1 image here]*
