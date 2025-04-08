@@ -100,14 +100,7 @@ prep -design picorv32a
 
 ---
 
-## 📂 Folder Structure
 
-```bash
-.
-├── day1/
-├── day2/
-├── day3/
-├── day4/
-├── day5/
-└── README.md
+
+
 
