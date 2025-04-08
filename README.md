@@ -44,7 +44,7 @@ prep -design picorv32a
 # prepares Picorv32a design for implementation
 ```
 
-![OpenLane Terminal Screenshot](images/Screenshot_2025-04-09_021549.png)
+![OpenLane Terminal Screenshot](day4/Screenshot from 2025-04-08 01-32-28.png)
 
 ---
 
