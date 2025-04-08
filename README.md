@@ -1,23 +1,23 @@
-NASSCOM-VSD SoC Design Program
+#NASSCOM-VSD SoC Design Program
 This repository documents the work done as part of the NASSCOM-VSD open-source SoC design program. The goal was to understand the complete RTL-to-GDSII flow using the Sky130 process node and tools like OpenLane.
 
-Objectives
-Learn digital design fundamentals
+##Objectives
+-Learn digital design fundamentals
 
-Understand ASIC design flow from RTL to layout
+-Understand ASIC design flow from RTL to layout
 
-Use open-source tools for synthesis, floorplanning, placement, routing, and verification
+-Use open-source tools for synthesis, floorplanning, placement, routing, and verification
 
-Tapeout a RISC-V based SoC block
+-Tapeout a RISC-V based SoC block
 
-Tools Used
-OpenLane
+##Tools Used
+-OpenLane
 
-Yosys
+-Yosys
 
-Magic
+-Magic
 
-KLayout
+-KLayout
 
 Netgen
 
