@@ -28,6 +28,11 @@ A 5-day learning journey into the world of open-source digital design, focusing 
   - CTS (Clock Tree Synthesis)
   - Routing
   - Sign-off (DRC, LVS, STA)
+  - 
+## LAB : SKY130_D1_SK4 - Synthesis using Yosys
+
+- First, navigate to the design directory:cd ~/Desktop/work/tools/openlane_working_dir/openlane/design/picorv32a
+
 
 📷 *[Add your Day 1 image here]*
 
