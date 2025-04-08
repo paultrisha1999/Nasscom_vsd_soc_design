@@ -1,20 +1,56 @@
-# Nasscom_vsd_soc_design
-Opensource RTL - GDSII implementation 
+NASSCOM-VSD SoC Design Program
+This repository documents the work done as part of the NASSCOM-VSD open-source SoC design program. The goal was to understand the complete RTL-to-GDSII flow using the Sky130 process node and tools like OpenLane.
 
-Sky130 Day 1 - Inception of open-source EDA, OpenLane, Sky130 PDK
-SKY130_D1_SK1 - How to talk to computers
+Objectives
+Learn digital design fundamentals
 
-SKY_L1 - Introduction to QFN-48 Package, chip, pads, core, die and IPs
+Understand ASIC design flow from RTL to layout
 
-SKY_L2 - Introduction to RISC-V
+Use open-source tools for synthesis, floorplanning, placement, routing, and verification
 
+Tapeout a RISC-V based SoC block
 
+Tools Used
+OpenLane
 
+Yosys
 
+Magic
 
-clock count, clock%,clock ratio....+ %dff
+KLayout
 
+Netgen
 
-standard cell placed in placement stage not in floorplan....in floorplan die,core area, utility factor, aspect ratio.
-i/p o/p cells,pg grid creation for power distribution network, macro cell placement
-openlane has lot of switches controlling the flow...instead of using direct run_floorplan
+OpenSTA
+
+Sky130 PDK
+
+Design Overview
+The project implements a basic RISC-V core and runs it through the full physical design flow. Steps include:
+
+RTL design in Verilog
+
+Functional simulation
+
+Synthesis and gate-level netlist generation
+
+Floorplanning and power planning
+
+Placement and clock tree synthesis
+
+Routing and parasitic extraction
+
+DRC and LVS checks
+
+GDSII generation
+
+Repository Structure
+verilog/: RTL design files
+
+openlane/: Physical design project
+
+pdks/: Sky130 PDK setup (not included here)
+
+reports/: Logs and output reports
+
+images/: Flow diagrams and results
