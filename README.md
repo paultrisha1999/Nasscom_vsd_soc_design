@@ -41,10 +41,7 @@ docker
 package require openlane 0.9
 # calls openlane 0.9
 prep -design picorv32a
-# prepares Picorv32a design for implementation
-
-
-
+# prepares Picorv32a design for implementation'''
 
 📷 *[Add your Day 1 image here]*
 
