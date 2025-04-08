@@ -1,56 +1,98 @@
-#NASSCOM-VSD SoC Design Program
-This repository documents the work done as part of the NASSCOM-VSD open-source SoC design program. The goal was to understand the complete RTL-to-GDSII flow using the Sky130 process node and tools like OpenLane.
+# 🔧 NASSCOM - VSD SoC Design Program
 
-##Objectives
--Learn digital design fundamentals
+A 5-day learning journey into the world of open-source digital design, focusing on ASIC flow using tools like OpenLANE and the Sky130 process.
 
--Understand ASIC design flow from RTL to layout
+---
 
--Use open-source tools for synthesis, floorplanning, placement, routing, and verification
+## 📚 Table of Contents
 
--Tapeout a RISC-V based SoC block
+1. Day 1: Introduction to Open-Source EDA, OpenLane, and Sky130 PDK  
+2. Day 2: Floorplanning Fundamentals and Library Cells  
+3. Day 3: Magic Layout and SPICE-based Characterization  
+4. Day 4: Timing Analysis and Clock Tree Essentials  
+5. Day 5: RTL to GDSII Flow - Final Integration  
 
-##Tools Used
--OpenLane
+---
 
--Yosys
+## 📆 Day-wise Summaries
 
--Magic
+### 🗓️ Day 1: Getting Started with Open Source ASIC Design
 
--KLayout
+- Learned about chip-level components: die, pads, core
+- Explored RISC-V ISA and its role in hardware-software interaction
+- Understood open-source flow: RTL design → GDSII using EDA tools
+- Breakdown of RTL2GDS stages:
+  - Synthesis
+  - Floorplanning & Power Planning
+  - Placement
+  - CTS (Clock Tree Synthesis)
+  - Routing
+  - Sign-off (DRC, LVS, STA)
 
-Netgen
+📷 *[Add your Day 1 image here]*
 
-OpenSTA
+---
 
-Sky130 PDK
+### 🗓️ Day 2: Floorplan Strategies and Library Components
 
-Design Overview
-The project implements a basic RISC-V core and runs it through the full physical design flow. Steps include:
+- Compared effective vs poor floorplans
+- Studied standard cells (inverter, buffer, etc.)
+- Gained hands-on experience with floorplanning in OpenLane
 
-RTL design in Verilog
+📷 *[Add your Day 2 image here]*
 
-Functional simulation
+---
 
-Synthesis and gate-level netlist generation
+### 🗓️ Day 3: Designing Cells with Magic and Running SPICE Simulations
 
-Floorplanning and power planning
+- Designed and laid out a basic inverter
+- Characterized cell using ngspice
+- Extracted parameters for use in synthesis
 
-Placement and clock tree synthesis
+📷 *[Add your Day 3 image here]*
 
-Routing and parasitic extraction
+---
 
-DRC and LVS checks
+### 🗓️ Day 4: Timing Analysis and Clock Distribution
 
-GDSII generation
+- Pre-layout vs post-layout timing
+- Importance of CTS and reducing clock skew
+- Worked with OpenSTA to analyze slack and critical paths
 
-Repository Structure
-verilog/: RTL design files
+📷 *[Add your Day 4 image here]*
 
-openlane/: Physical design project
+---
 
-pdks/: Sky130 PDK setup (not included here)
+### 🗓️ Day 5: Integration and Final Tape-Out
 
-reports/: Logs and output reports
+- Used TritonRoute and Magic to complete routing
+- Ran DRC and LVS checks
+- Generated GDSII file for submission
 
-images/: Flow diagrams and results
+📷 *[Add your Day 5 image here]*
+
+---
+
+## 🧰 Tools Used
+
+- **OpenLane**
+- **Sky130 PDK**
+- **Magic VLSI**
+- **ngspice**
+- **KLayout**
+- **Yosys**
+- **OpenSTA**
+
+---
+
+## 📂 Folder Structure
+
+```bash
+.
+├── day1/
+├── day2/
+├── day3/
+├── day4/
+├── day5/
+└── README.md
+
