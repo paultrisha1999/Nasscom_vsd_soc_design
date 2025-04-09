@@ -365,6 +365,78 @@ Cell Fall Delay = Time taken for output to fall to 50% - Time taken for input to
 - 50% of 3.3 V = 1.65 V
   Cell Fall Delay = 4.053ns - 4.049ns = 0.004ns
 
+  ```bash
+  #Download the drc_test folder in home directory
+  wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+  #extract the labs from the zip file
+  tar xfz drc_tests.tgz
+
+  #Change directory into the lab folder
+  cd drc_tests
+  ls -lrt
+
+  #Command to view .magicrc file
+  gvim .magicrc
+
+  #open magic tool
+  magic -d XR met3.mag& ```
+
+<img src="day3/Screenshot from 2025-04-07 01-48-13.png " width="800"/>
+
+## Drawing a Layer in Magic Layout Tool
+
+To create a layout shape for a specific layer in Magic:
+
+1. Use **left-click and right-click** together to draw a bounding box (BBox) in the layout window.
+2. From the **layer palette**, select your desired layer by clicking it using the **middle mouse button**.
+3. The drawn box will now be assigned to the selected layer.
+
+>  Tip: Make sure the layer is highlighted before drawing, or your shape might not appear on the intended layer.
+<img src="day3/Screenshot from 2025-04-07 02-33-25.png" width="800"/>
+<img src="day3/Screenshot from 2025-04-07 02-43-07.png" width="800"/>
+
+```bash
+#metal 3-filled area will be associated with  VIA2 mask.
+cif see VIA2
+
+#in tkcon
+load poly.mag
+```
+
+<img src="day3/Screenshot from 2025-04-07 02-52-56.png" width="800"/>
+
+
+##  Fixing a DRC Rule Violation in `poly.mag`
+
+To understand and fix a DRC error (e.g., `poly.9`) in Magic, follow these steps:
+
+1. **Open the layout**:
+   - Launch Magic and load the `poly.mag` layout file.
+
+2. **Locate the DRC error**:
+   - Zoom in to the area flagged with the `poly.9` error.
+
+3. **Understand the error**:
+   - Look up the rule definition for `poly.9` on the [Skywater PDK ReadTheDocs](https://skywater-pdk.readthedocs.io/en/latest/).
+
+4. **Inspect the technology file**:
+   - Open the `sky130A.tech` file located in the same directory as your layout.
+   - Search for the corresponding DRC rule related to the error.
+
+5. **Edit or add the missing rule**:
+   - Modify the `.tech` file to add or correct the DRC specification for the `poly.9` rule based on documentation.
+
+6. **Reload Magic**:
+   - Restart Magic and re-run DRC to verify if the issue has been resolved.
+
+> ✅ This process helps in understanding how DRC rules are implemented and enforced, and how to customize or debug them using the technology file.
+
+  <img src="day3/Screenshot from 2025-04-07 03-46-35.png" alt="after fixing the drc violation in the file" width="800"/>
+
+
+
+
 
 ---
 
