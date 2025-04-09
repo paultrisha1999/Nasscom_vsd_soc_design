@@ -51,7 +51,16 @@ run_synthesis
 
 <img src="images/openlaneterminal.png" alt="OpenLane Terminal Screenshot" width="800"/>
 - In runs/<run_id>/ folder, there's a config.tcl file that shows the actual configuration parameters used during the run, which may differ from the original `designs/picorv32a/config.tcl` file. This allows inspection of what defaults were applied during flow execution.
-- After the run is complete, you can inspect the runs directory for output data. The results/ folder contains the synthesized netlist, logs/ stores detailed logs for each stage (like synthesis), and reports/ includes all reports generated during the flow. Among the multiple synthesis reports in reports/synthesis/, the one with the latest timestamp is the most accurate and should be referred to for final results.
+- After the run is complete, you can inspect the runs directory for output data. The results/ folder contains the synthesized netlist, logs/ stores detailed logs for each stage (like synthesis), and reports/ includes all reports generated during the flow. Among the multiple synthesis reports in reports/synthesis/, the one with the latest timestamp is the most accurate and should be referred to for final results
+- To calculate the DFF ratio using the following formula:
+FlipFlop Ratio = Number of D Flip Flops / Total Number of Cells
+Percentage of DFFs = FlipFlop Ratio * 100
+Percentage of DFFs = (1613 / 14876) * 100 = 10.84%
+<img src="images/Screenshot 2025-04-09 020049.png" alt="D FF Ratio" width="800"/>
+
+
+
+
 
 
 
