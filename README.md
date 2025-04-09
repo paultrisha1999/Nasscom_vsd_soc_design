@@ -195,12 +195,43 @@ When using the `magic` GUI to explore your design, here are some helpful shortcu
     what
     ```
     This will display details like pin names, net connections, and more.
-
-> Use these shortcuts to inspect the physical layout and debug issues effectively in the `magic` GUI.
-
+    
 <img src="day2/Screenshot from 2025-04-03 01-33-48.png" alt="magic gui" width="800"/>
 
+### Library Binding and Placement
 
+- **Library**  
+  The library contains multiple **flavors of standard cells**, providing:
+  - Functional behavior
+  - Timing characteristics
+  - Physical layouts  
+
+  These are crucial for synthesis, placement, and routing stages of the flow.
+
+---
+
+- **Placement** refers to the process of positioning the netlist elements (standard cells) **within the core area** defined during the floorplanning stage.
+
+- This placement takes into account:
+  - The **pin locations**
+  - **Estimated resistance and capacitance** of interconnects
+  - **Timing constraints**
+
+- **Signal transition analysis** is performed post-placement to check:
+  - Whether the placed cells are receiving signals **within the required timing window**
+
+- If signal transitions are not meeting the required timing:
+  - **Buffers are inserted** to reduce delay and improve signal integrity.
+
+> Proper placement is critical for ensuring that the design meets timing and power constraints, and it sets the stage for successful routing.
+
+```bash
+run_placement
+results/placement
+#in above dir results present
+```
+
+<img src="day2/Screenshot from 2025-04-04 11-13-08.png" width="800"/>
 
 
 
