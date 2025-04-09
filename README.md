@@ -337,7 +337,7 @@ To prepare a SPICE deck from the file generated using the Magic GUI, follow thes
 ### Rise Time
 
 \[
-\text{Rise Time} = \text{Time taken for output to rise to 80\%} - \text{Time taken for output to rise to 20\%}
+{Rise Time} = {Time taken for output to rise to 80\%} - {Time taken for output to rise to 20\%}
 \]
 
 - 20% of output = 0.66 V  
