@@ -16,18 +16,40 @@ A 5-day learning journey into the world of open-source digital design, focusing 
 
 ## 📆 Day-wise Summaries
 
-### 🗓️ Day 1: Getting Started with Open Source ASIC Design
+## Day 1: Introduction to Open-Source EDA, OpenLane, and Sky130 PDK
 
-- Learned about chip-level components: die, pads, core
-- Explored RISC-V ISA and its role in hardware-software interaction
-- Understood open-source flow: RTL design → GDSII using EDA tools
-- Breakdown of RTL2GDS stages:
-  - Synthesis
-  - Floorplanning & Power Planning
-  - Placement
-  - CTS (Clock Tree Synthesis)
-  - Routing
-  - Sign-off (DRC, LVS, STA)
+### How to Talk to Computers
+
+In this session, we explored the foundational concepts of communicating with computers, focusing on the architecture and components of integrated circuits.
+
+---
+
+### Introduction to QFN-48 Package, Chip, Pads, Core, Die, and IPs
+
+- **QFN-48 Package**: A surface-mount IC package with 48 pins.
+- **Chip Layout**:
+  - **Pads**: Points for external connection.
+  - **Core**: The heart of the IC where computation happens.
+  - **Die**: The silicon wafer that holds the chip.
+  - **IPs**: Pre-designed modules integrated into SoCs.
+
+---
+
+### Introduction to RISC-V
+
+- RISC-V is an open-standard ISA based on reduced instruction set computing principles.
+- Enables modular, extensible processor designs for SoCs and embedded applications.
+
+---
+
+### OpenLane and RTL to GDSII Flow
+
+**OpenLane** is an open-source automated digital design flow from RTL to GDSII, integrating tools like Yosys, OpenROAD, Magic, Netgen, etc.
+
+- Automates synthesis, floorplanning, placement, CTS, routing, and DRC/LVS checks.
+- Uses **Sky130 PDK** for fabrication-compatible design rules.
+
+---
 
 ## LAB : SKY130_D1_SK4 - Synthesis using Yosys
 
@@ -58,6 +80,7 @@ FlipFlop Ratio = Number of D Flip Flops / Total Number of Cells
 Percentage of DFFs = FlipFlop Ratio * 100
 Percentage of DFFs = (1613 / 14876) * 100 = 10.84%
 <img src="images/Screenshot 2025-04-09 020049.png" alt="D FF Ratio" width="800"/>
+- New files i.e. merged,synthesis are now created in the picorv32a folder
 
 
 
