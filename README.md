@@ -407,7 +407,7 @@ load poly.mag
 <img src="day3/Screenshot from 2025-04-07 02-52-56.png" width="800"/>
 
 
-##  Fixing a DRC Rule Violation in `poly.mag`
+- **Fixing a DRC Rule Violation in `poly.mag`**
 
 To understand and fix a DRC error (e.g., `poly.9`) in Magic, follow these steps:
 
