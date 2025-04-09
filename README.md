@@ -781,6 +781,7 @@ set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_
 echo $::env(CTS_CLK_BUFFER_LIST)
 
 ```
+Also shows how to reinsert clock buffer of size 1
 <img src="day4/Screenshot from 2025-04-08 18-06-59.png"  width="800"/>
 
 
