@@ -667,6 +667,127 @@ run_cts
 
 <img src="day4/Screenshot from 2025-04-08 09-09-43.png"  width="800"/>
 
+Timing Analysis in OpenRoad in openlane flow unlike OpenSTA
+```bash 
+# run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/28-03_10-01/tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/28-03_10-0/results/cts/picorv32a.cts.def
+
+# Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+# Loading the created database in OpenROAD
+read_db pico_cts.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/28-03_10-01/results/synthesis/picorv32a.synthesis_cts.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Link design and library
+link_design picorv32a
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/mybase.sdc
+
+# Setting all clocks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Exit to OpenLANE flow
+exit
+```
+<img src="day4/Screenshot from 2025-04-08 16-34-57.png"  width="800"/>
+
+<img src="day4/Screenshot from 2025-04-08 16-51-24.png"  width="800"/>
+
+**Setup Slack**
+
+<img src="day4/Screenshot from 2025-04-08 16-57-32.png"  width="800"/>
+
+**Hold Slack**
+
+<img src="day4/Screenshot from 2025-04-08 17-25-37.png"  width="800"/>
+
+Timing analysis with right timing libraries and CTS assignment
+```bash
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+#removes buffers of size 1
+set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Setting def as placement def otherwise clock not found error occurs
+set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/08-04_01-29//results/placement/picorv32a.placement.def
+
+# Run CTS again
+run_cts
+
+# run OpenROAD tool
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/08-04_01-29//tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/08-04_01-29//results/cts/picorv32a.cts.def
+
+# Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+# Loading the created database in OpenROAD
+read_db pico_cts.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/08-04_01-29//results/synthesis/picorv32a.synthesis_cts.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Report hold skew
+report_clock_skew -hold
+
+# Report setup skew
+report_clock_skew -setup
+
+# Exit to OpenLANE flow
+exit
+
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+# Inserting 'sky130_fd_sc_hd__clkbuf_1' to first index of list
+set ::env(CTS_CLK_BUFFER_LIST) [linsert $::env(CTS_CLK_BUFFER_LIST) 0 sky130_fd_sc_hd__clkbuf_1]
+
+# Checking current value of 'CTS_CLK_BUFFER_LIST'
+echo $::env(CTS_CLK_BUFFER_LIST)
+
+```
+<img src="day4/Screenshot from 2025-04-08 18-06-59.png"  width="800"/>
+
+
+
+
+
+
 
 
 
