@@ -175,7 +175,7 @@ Die Area = (Width × Height) / (1000 × 1000) = (660685 × 671405) / 1,000,000 �
 # in a seperate terminal enter the directory with def filr (results folder in recent run stage : floorplan)
 magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
-### 🧭 Navigating the Layout in `magic` GUI
+###  Navigating the Layout in `magic` GUI
 
 When using the `magic` GUI to explore your design, here are some helpful shortcuts and tips:
 
