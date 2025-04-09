@@ -143,7 +143,7 @@ OpenLane applies configuration settings in the following **priority order**:
 1. ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
 2. design/runs/config.tcl
 3. design/PDK.tcl
-
+```
 
 📷 *[Add your Day 2 image here]*
 
