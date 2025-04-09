@@ -6,17 +6,17 @@ A 5-day learning journey into the world of open-source digital design, focusing 
 
 ## 📚 Table of Contents
 
-1. Day 1: Introduction to Open-Source EDA, OpenLane, and Sky130 PDK  
-2. Day 2: Floorplanning Fundamentals and Library Cells  
-3. Day 3: Magic Layout and SPICE-based Characterization  
-4. Day 4: Timing Analysis and Clock Tree Essentials  
-5. Day 5: RTL to GDSII Flow - Final Integration  
+1. Day 1: Inception of open-source EDA, OpenLANE and Sky130 PDK  
+2. Day 2: Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells 
+3. Day 3: Design library cell using Magic Layout and ngspice characterization 
+4. Day 4: Pre-layout timing analysis and importance of good clock tree
+5. Day 5: Final steps for RTL2GDS using tritonRoute and openSTA 
 
 ---
 
 ## 📆 Day-wise Summaries
 
-## Day 1: Introduction to Open-Source EDA, OpenLane, and Sky130 PDK
+## Day 1: Inception of open-source EDA, OpenLANE and Sky130 PDK
 
 ### How to Talk to Computers
 
