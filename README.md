@@ -131,6 +131,7 @@ To understand configuration hierarchy:
 
 ```bash
 ~/Desktop/work/tools/openlane_working_dir/openlane/configuration < design/runs/config.tcl < design/PDK.tcl
+```
 
 - The directory `~/Desktop/work/tools/openlane_working_dir/openlane/configuration` contains the **default configuration files** used by OpenLane.
 - Inside this folder, there's a `README.md` file that **documents all available configuration variables**. It's a great reference for understanding and customizing your design flow.
@@ -144,6 +145,7 @@ OpenLane applies configuration settings in the following **priority order**:
 2. design/runs/config.tcl
 3. design/PDK.tcl
 ```
+
 
 📷 *[Add your Day 2 image here]*
 
