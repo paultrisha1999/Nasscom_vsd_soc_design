@@ -899,16 +899,11 @@ exit
 ```
 
 ---
+## Acknowledgements
 
-## 🧰 Tools Used
-
-- **OpenLane**
-- **Sky130 PDK**
-- **Magic VLSI**
-- **ngspice**
-- **KLayout**
-- **Yosys**
-- **OpenSTA**
+- [Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh/), Co-founder, VSD Corp. Pvt. Ltd.
+- [Nickson P Jose](https://www.linkedin.com/in/nickson-p-jose/), Physical Design Engineer, Intel Corporation.
+- [R. Timothy Edwards](https://www.linkedin.com/in/r-timothy-edwards/), Senior Vice President of Analog and Design, efabless Corporation.
 
 ---
 
