@@ -233,7 +233,12 @@ results/placement
 
 <img src="day2/Screenshot from 2025-04-04 11-13-08.png" width="800"/>
 
+```bash
+# enter the directory with def file - results folder in recent run stage : placement
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 
+<img src="day2/Screenshot from 2025-04-04 11-36-40.png" alt="def generated in magic" width="800"/>
 
 
 ---
