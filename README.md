@@ -328,74 +328,42 @@ To prepare a SPICE deck from the file generated using the Magic GUI, follow thes
 <img src="day3_1/Screenshot from 2025-04-06 22-13-40.png " width="800"/>
 
 ###SPICE snippet
+
 <img src="day3_1/Screenshot from 2025-04-06 22-15-52.png " width="800"/>
 <img src="day3_1/Screenshot from 2025-04-07 00-58-09.png" width="800"/>
 
 
-## Cell Timing Parameter Calculations
+### Cell Timing Parameter Calculations-
 
 ### Rise Time
 
-\[
-{Rise Time} = {Time taken for output to rise to 80\%} - {Time taken for output to rise to 20\%}
-\]
+Rise Time = Time taken for output to rise to 80% - Time taken for output to rise to 20%
 
 - 20% of output = 0.66 V  
 - 80% of output = 2.64 V
-
-\[
-\text{Rise Time} = 2.205\,\text{ns} - 2.164\,\text{ns} = 0.041\,\text{ns}
-\]
-
----
-
+  Rise Time = 2.205ns - 2.164ns = 0.041ns
+  
 ### Fall Time
 
-\[
-\text{Fall Time} = \text{Time taken for output to fall to 20\%} - \text{Time taken for output to fall to 80\%}
-\]
+Fall Time = Time taken for output to fall to 20% - Time taken for output to fall to 80%
 
 - 20% of output = 660 mV  
 - 80% of output = 2.64 V
-
-\[
-\text{Fall Time} = 4.068\,\text{ns} - 4.040\,\text{ns} = 0.028\,\text{ns}
-\]
-
----
+  Fall Time = 4.068ns - 4.040ns = 0.028ns
 
 ### Propagation Delay (tpHL)
 
-\[
-\text{Propagation Delay} = \text{Time taken for output to rise to 50\%} - \text{Time taken for input to fall to 50\%}
+Propagation Delay = Time taken for output to rise to 50% - Time taken for input to fall to 50%
 
 - 50% of 3.3 V = 1.65 V
-
-\[
-\text{Propagation Delay} = 2.185\,\text{ns} - 2.150\,\text{ns} = 0.035\,\text{ns}
-\]
-
----
+  Propagation Delay = 2.185ns - 2.150ns = 0.035ns
 
 ### Cell Fall Delay (tpLH)
 
-\[
-\text{Cell Fall Delay} = \text{Time taken for output to fall to 50\%} - \text{Time taken for input to rise to 50\%}
-\]
+Cell Fall Delay = Time taken for output to fall to 50% - Time taken for input to rise to 50%
 
 - 50% of 3.3 V = 1.65 V
-
-\[
-\text{Cell Fall Delay} = 4.05467\,\text{ns} - 4.04998\,\text{ns} = 0.00469\,\text{ns}
-\]
-
-
-
-
-
-
-  
-
+  text{Cell Fall Delay} = 4.05467ns - 4.04998ns = 0.00469ns
 
 
 ---
