@@ -476,6 +476,7 @@ lef write
 ```
 <img src="day4/Screenshot from 2025-04-08 00-38-03.png"  width="800"/>
 <img src="day4/Screenshot from 2025-04-08 00-45-44.png"  width="800"/>
+
 ```bash
 # Copy lef file and required lib files to 'picorv32a' design 'src' directory.
 cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
@@ -491,7 +492,9 @@ set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc
 
 set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef] ```
 
+
 <img src="day4/Screenshot from 2025-04-08 01-03-43.png"  width="800
+
 <img src="day4/Screenshot 2025-04-09 170101.png"  width="800"/>
 
 <img src="day4/Screenshot from 2025-04-08 01-32-28.png" alt="Run openlane flow synthesis with newly inserted custom inverter cell" width="800"/>
