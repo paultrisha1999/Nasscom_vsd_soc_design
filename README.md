@@ -152,6 +152,57 @@ OpenLane applies configuration settings in the following **priority order**:
 
 ```
 <img src="day2/Screenshot from 2025-04-02 20-57-06.png" alt="Floorplan def" width="800"/>
+###  Floorplan Dimensions and Die Area Calculation
+In OpenLane, dimensions are expressed in **unit distance**, where:1000 unit distance = 1 micron
+
+
+Based on the DEF (Design Exchange Format) file:
+
+- **Width in unit distance** = `660685 - 0` = `660685`
+- **Height in unit distance** = `671405 - 0` = `671405`
+
+To calculate the **die area in microns²**:
+
+Die Area = (Width × Height) / (1000 × 1000) = (660685 × 671405) / 1,000,000 ≈ 443587.21 µm²
+
+###  Report and Visualization
+
+- After completing the floorplan step, OpenLane generates a report that includes parameters like die area and aspect ratio.
+- To visually inspect the floorplan and layout in a GUI, use the **MAGIC** tool.
+
+> Tip: The `magic` GUI helps to debug DRC issues and inspect placement and routing interactively.
+```bash
+# in a seperate terminal enter the directory with def filr (results folder in recent run stage : floorplan)
+magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+### 🧭 Navigating the Layout in `magic` GUI
+
+When using the `magic` GUI to explore your design, here are some helpful shortcuts and tips:
+
+- **Center the design** for better viewing:
+  - Press **`s`** to select the entire design.
+  - Then press **`v`** to center the view.
+
+- **Zoom into a specific location**:
+  - **Left-click** to select the lower-left corner `(x1, y1)`
+  - **Right-click** to set the upper-right corner `(x2, y2)`
+
+- **Get pin or object info** in the layout:
+  - Hover your cursor over the desired object.
+  - Press **`s`** to select it.
+  - In the **tkcon** console, type the following command:
+    ```
+    what
+    ```
+    This will display details like pin names, net connections, and more.
+
+> Use these shortcuts to inspect the physical layout and debug issues effectively in the `magic` GUI.
+
+<img src="day2/Screenshot from 2025-04-03 01-33-48.png" alt="magic gui" width="800"/>
+
+
+
+
 
 
 ---
