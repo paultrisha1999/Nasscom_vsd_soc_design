@@ -45,7 +45,7 @@ prep -design picorv32a
 ```
 
 <img src="images/openlaneterminal.png" alt="OpenLane Terminal Screenshot" width="800"/>
-- `runs dir willbe created in the `designs/picorv32a folder
+- `runs` dir willbe created in the `designs/picorv32a` folder
 ---
 
 ### 🗓️ Day 2: Floorplan Strategies and Library Components
