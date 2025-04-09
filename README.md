@@ -42,10 +42,13 @@ package require openlane 0.9
 # calls openlane 0.9
 prep -design picorv32a
 # prepares Picorv32a design for implementation
+designs/picorv32a/runs/
 ```
 
 <img src="images/openlaneterminal.png" alt="OpenLane Terminal Screenshot" width="800"/>
-- `runs` dir willbe created in the `designs/picorv32a` folder
+-Inside the runs/<run_id>/ folder, there's a config.tcl file that shows the actual configuration parameters used during the run, which may differ from the original designs/picorv32a/config.tcl file. This allows inspection of what defaults were applied during flow execution.
+
+
 ---
 
 ### 🗓️ Day 2: Floorplan Strategies and Library Components
