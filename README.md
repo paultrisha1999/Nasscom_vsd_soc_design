@@ -460,7 +460,7 @@ These files are generated and exported using the **Magic layout tool**, after co
 
 > ✅ Once both files are ready, they can be included in the OpenLane configuration to use the custom cell in digital synthesis and physical design flow.
 
-<img src="day4/Screenshot from 2025-04-08 00-22-39. " alt="tracks.info of sky130_fd_sc_hd" width="800"/>
+<img src="day4/Screenshot from 2025-04-08 00-22-39.png " alt="tracks.info of sky130_fd_sc_hd" width="800"/>
 
 📷 *[Add your Day 4 image here]*
 
