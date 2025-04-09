@@ -96,11 +96,43 @@ Percentage of DFFs = (1613 / 14876) * 100 = 10.84%
 
 ---
 
-### 🗓️ Day 2: Floorplan Strategies and Library Components
+### 🗓️ Day 2: Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
 
 - Compared effective vs poor floorplans
 - Studied standard cells (inverter, buffer, etc.)
 - Gained hands-on experience with floorplanning in OpenLane
+  
+
+### 🔲 Preplaced Cells Concept
+- The top-level logic is divided into smaller cuts or blocks, which are implemented separately.
+- Some parts of the circuit are designed in a reusable, black-boxed format — often used multiple times like an IP block.
+- Examples include memory blocks, complex clock gating, muxes, comparators, ALUs, etc.
+- These blocks are placed and fixed **before** the standard cell placement. Tools do not alter their positions during placement.
+- These are called **pre-placed cells**, and must be surrounded with **decoupling cells** to maintain voltage integrity.
+
+### ⚡ Decoupling Cells
+- Help maintain stable supply voltage near pre-placed logic blocks.
+- Mitigate voltage drops caused by resistance in the power delivery path.
+- Act like capacitors that release charge during voltage dips.
+
+### 🔌 Power (PWR) Planning
+- If there's only one power supply point, the voltage drop can cause **signal integrity issues**.
+- To mitigate this, **power mesh grids** are spread across the chip to ensure minimal distance from power to logic.
+
+### 📍 Pin Placement
+- Requires knowledge of how input/output pins will interact with internal logic.
+- Affects routing congestion and final performance of the chip.
+
+---
+
+## 🧪 LAB: Floorplanning & Placement
+
+### 📂 Exploring OpenLane Configurations
+
+To understand configuration hierarchy:
+
+```bash
+~/Desktop/work/tools/openlane_working_dir/openlane/configuration < design/runs/config.tcl < design/PDK.tcl
 
 📷 *[Add your Day 2 image here]*
 
