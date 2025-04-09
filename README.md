@@ -293,6 +293,41 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 
 <img src="day3_1/Screenshot from 2025-04-06 19-57-59.png " width="800"/>
 
+## Sky130 Tech File
+
+### NGSpice Simulation for Cell Characterization
+
+- **Timing Analysis**: Determine how quickly a cell can respond to input changes. Key metrics include:
+  - **Propagation Delay**: Time taken for an input change to affect the output.
+  - **Rise/Fall Time**: Time taken for the output to transition from low to high (rise) or high to low (fall).
+  - **Setup and Hold Times** *(for sequential elements)*.
+
+- **Power Analysis**: Measure the amount of power consumed by the cell:
+  - **Static Power**: Power consumed when the cell is idle (leakage).
+  - **Dynamic Power**: Power consumed during switching.
+
+- **Noise Margins**: Determine how much noise a gate can tolerate without malfunctioning.
+
+- **Load and Drive Strength Characterization**:
+  - Understanding how the cell performs under various output loading conditions.
+  - Determine the maximum fanout it can support reliably.
+
+---
+
+### LAB: Preparing the SPICE Deck for Simulation
+
+To prepare a SPICE deck from the file generated using the Magic GUI, follow these steps:
+
+1. Include library paths containing PMOS and NMOS models.
+2. Set the appropriate grid dimensions for the simulation.
+3. Ensure the correct model names are used for PMOS and NMOS devices.
+4. Add signal, power, and ground connections to your subcircuit.
+5. Define the type of simulation (e.g., transient) and set relevant parameters.
+
+### Example SPICE Snippet
+
+<img src="day3_1/Screenshot from 2025-04-06 20-00-36.png " width="800"/>
+
   
 
 
