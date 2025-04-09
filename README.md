@@ -521,8 +521,57 @@ echo $::env(SYNTH_DRIVING_CELL)
 
 run_synthesis
 ```
+- The custom sky130_vsdinv in temp/merged.lef indicating the cell was successfully used during synthesis
+   
+<img src="day4/Screenshot from 2025-04-08 02-46-00.png" width="800"/>
 
-<img src="day4/Screenshot from 2025-04-08 02-46-00.png" alt="The custom sky130_vsdinv in temp/merged.lef indicating the cell was successfully used during synthesis"  width="800"/>
+-area has increased and worst negative slack has become 0
+
+<img src="day4/Screenshot from 2025-04-08 04-00-47.png"  width="800"/>
+
+```bash
+#run floorplanbut insted of run_floorplan use
+init_floorplan
+place_io
+tap_decap_or
+
+run_placement
+
+#Open the layout to see if the inverter is inserted into the picorv32 design
+# dir of design dir enter
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/07-04_22-28/results/placement/
+
+# load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+
+<img src="day4/Screenshot from 2025-04-08 04-26-44.png"  width="800"/>
+
+<img src="day4/Screenshot from 2025-04-08 04-32-15.png"  width="800"/>
+
+<img src="day4/Screenshot from 2025-04-08 04-33-01.png"  width="800"/>
+
+- pre_sta.conf is created for STA analysis outside openlane
+  
+ <img src="day4/Screenshot from 2025-04-08 06-09-09.png"  width="800"/>
+
+
+-created mybase.sdc for STA analysis in openlane/designs/picorv32a/src directory based on the file openlane/scripts/base.sdc
+
+<img src="day4/Screenshot from 2025-04-08 06-08-25.png"  width="800"/>
+
+```bash
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+sta pre_sta.conf
+```
+-setup slack
+<img src="day4/Screenshot from 2025-04-08 06-10-21.png"  width="800"/>
+
+
+
+  
 
 
 
