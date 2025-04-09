@@ -445,7 +445,7 @@ To understand and fix a DRC error (e.g., `poly.9`) in Magic, follow these steps:
 
 - **Timing Table and Integration of Custom Cells in OpenLane**
 
-- The **timing table** models the **delay characteristics** of a standard cell based on two key factors:
+- The **timing table** of different size_values models the **delay characteristics** of a standard cell based on two key factors:
   - The **input signal transition time**
   - The **output load capacitance**
 
@@ -461,7 +461,9 @@ These files are generated and exported using the **Magic layout tool**, after co
 > ✅ Once both files are ready, they can be included in the OpenLane configuration to use the custom cell in digital synthesis and physical design flow.
 
 <img src="day4/Screenshot from 2025-04-08 00-22-39.png " alt="tracks.info of sky130_fd_sc_hd" width="800"/>
+
 Commands to open the custom inverter layout:
+
 ```bash
 # Change directory to vsdstdcelldesign
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
