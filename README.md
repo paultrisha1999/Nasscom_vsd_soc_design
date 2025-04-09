@@ -42,14 +42,15 @@ package require openlane 0.9
 # calls openlane 0.9
 prep -design picorv32a
 # prepares Picorv32a design for implementation
-designs/picorv32a/runs/
+designs/picorv32a/runs/<run_id>/
+
 
 run_synthesis
 # runs synthesis and abc's
 ```
 
 <img src="images/openlaneterminal.png" alt="OpenLane Terminal Screenshot" width="800"/>
-- Inside the `runs/<run_id>/`runs/<run_id>/ folder, there's a config.tcl file that shows the actual configuration parameters used during the run, which may differ from the original designs/picorv32a/config.tcl file. This allows inspection of what defaults were applied during flow execution.
+- In runs/<run_id>/ folder, there's a config.tcl file that shows the actual configuration parameters used during the run, which may differ from the original `designs/picorv32a/config.tcl` file. This allows inspection of what defaults were applied during flow execution.
 - After the run is complete, you can inspect the runs directory for output data. The results/ folder contains the synthesized netlist, logs/ stores detailed logs for each stage (like synthesis), and reports/ includes all reports generated during the flow. Among the multiple synthesis reports in reports/synthesis/, the one with the latest timestamp is the most accurate and should be referred to for final results.
 
 
