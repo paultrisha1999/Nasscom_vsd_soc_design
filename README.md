@@ -494,7 +494,7 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 ```
 
 
-<img src="day4/Screenshot from 2025-04-08 01-03-43.png"  width="800
+<img src="day4/Screenshot from 2025-04-08 01-03-43.png"  width="800"/>
 
 <img src="day4/Screenshot 2025-04-09 170101.png"  width="800"/>
 
