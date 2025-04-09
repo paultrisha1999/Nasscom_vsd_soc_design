@@ -498,7 +498,33 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 
 <img src="day4/Screenshot 2025-04-09 170101.png"  width="800"/>
 
-<img src="day4/Screenshot from 2025-04-08 01-32-28.png" alt="Run openlane flow synthesis with newly inserted custom inverter cell" width="800"/>
+<img src="day4/Screenshot from 2025-04-08 01-32-28.png" alt="Run openlane flow synthesis with the currently inserted custom inverter cell" width="800"/>
+<img src="day4/Screenshot from 2025-04-08 01-45-00.png" alt="check the chip area here(as it isgoing to change later after certain changes)" width="800"/>
+
+```bash
+#rerun docker instance and all the steps then run the following lines to change certain configurations then run_synthesis
+echo $::env(SYNTH_STRATEGY)
+
+# sets new value for SYNTH_STRATEGY
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+# check whether enabled =1
+echo $::env(SYNTH_BUFFERING)
+
+echo $::env(SYNTH_SIZING)
+
+# sets new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+# check whether it's the proper cell or not
+echo $::env(SYNTH_DRIVING_CELL)
+
+run_synthesis
+```
+
+<img src="day4/Screenshot from 2025-04-08 00-22-39.png" alt="The custom sky130_vsdinv in temp/merged.lef indicating the cell was successfully used during synthesis"  width="800"/>
+
+
 
 
 
