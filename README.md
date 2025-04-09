@@ -125,14 +125,25 @@ Percentage of DFFs = (1613 / 14876) * 100 = 10.84%
 
 ---
 
-## 🧪 LAB: Floorplanning & Placement
-
-### 📂 Exploring OpenLane Configurations
+## LAB: Floorplanning & Placement
 
 To understand configuration hierarchy:
 
 ```bash
 ~/Desktop/work/tools/openlane_working_dir/openlane/configuration < design/runs/config.tcl < design/PDK.tcl
+
+- The directory `~/Desktop/work/tools/openlane_working_dir/openlane/configuration` contains the **default configuration files** used by OpenLane.
+- Inside this folder, there's a `README.md` file that **documents all available configuration variables**. It's a great reference for understanding and customizing your design flow.
+
+- Configuration Priority Order
+
+OpenLane applies configuration settings in the following **priority order**:
+
+```text
+1. ~/Desktop/work/tools/openlane_working_dir/openlane/configuration
+2. design/runs/config.tcl
+3. design/PDK.tcl
+
 
 📷 *[Add your Day 2 image here]*
 
