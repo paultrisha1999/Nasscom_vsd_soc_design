@@ -146,8 +146,13 @@ OpenLane applies configuration settings in the following **priority order**:
 3. design/PDK.tcl
 ```
 
+```bash
+  run_floorplan
+  # run floorplan
 
-📷 *[Add your Day 2 image here]*
+```
+<img src="day2/Screenshot from 2025-04-02 20-57-06.png" alt="Floorplan def" width="800"/>
+
 
 ---
 
