@@ -784,48 +784,39 @@ echo $::env(CTS_CLK_BUFFER_LIST)
 Also shows how to reinsert clock buffer of size 1
 <img src="day4/Screenshot from 2025-04-08 18-06-59.png"  width="800"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
 ---
 
-### 🗓️ Day 5: Integration and Final Tape-Out
+### 🗓️ Day 5: Final steps for RTL2GDS using tritonRoute and openSTA
+##  Routing and Post-Route Analysis
 
-- Used TritonRoute and Magic to complete routing
-- Ran DRC and LVS checks
-- Generated GDSII file for submission
+At this stage of the flow, the following key steps are carried out:
 
-📷 *[Add your Day 5 image here]*
+1. **🔌 Power Routing**  
+   - In OpenLane, power routing is performed at this stage of the flow.
+   -  Note: Although power distribution networks (PDN) are typically created during the floorplanning stage in a standard flow, OpenLane handles it here due to its internal structure.
+
+2. **🔀 Signal Routing (TritonRoute)**  
+   - Uses **TritonRoute** to perform detailed signal routing between standard cells based on the global routing guide.
+
+3. **📐 RC Extraction**  
+   - Extracts parasitic **resistances and capacitances** from the routed layout, which are critical for accurate timing analysis.
+
+4. **⏱️ Post-Route Timing Analysis (OpenSTA)**  
+   - Runs **OpenSTA** on the post-route netlist and parasitics to perform precise static timing analysis.
+
+> ✅ These steps help ensure the design meets all timing and connectivity constraints after physical implementation.
+
+
+PWR Routing:
+``` bash
+
+# check if def file openlane is currently pointing to CTS def
+echo $::env(CURRENT_DEF)
+
+# create PDN
+gen_pdn
+```
+<img src="day5./Screenshot from 2025-04-08 18-17-40.png"  width="800"/>
 
 ---
 
