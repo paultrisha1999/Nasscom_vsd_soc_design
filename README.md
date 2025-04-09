@@ -567,7 +567,123 @@ cd Desktop/work/tools/openlane_working_dir/openlane
 sta pre_sta.conf
 ```
 -setup slack
+
 <img src="day4/Screenshot from 2025-04-08 06-10-21.png"  width="800"/>
+
+-hold slack(meaningless before cts)
+
+<img src="day4/Screenshot from 2025-04-08 06-10-36.png"  width="800"/>
+
+-Since more fanout is causing more delay, modify parameters to reduce fanout and do synthesis again
+
+<img src="day4/Screenshot from 2025-04-08 06-30-42.png"  width="800"/>
+
+```bash
+# in openlane create docker instance
+prep -design picorv32a -tag 07-04_22-28 -overwrite
+
+# include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+set ::env(SYNTH_SIZING) 1
+set ::env(SYNTH_MAX_FANOUT) 4
+echo $::env(SYNTH_DRIVING_CELL)
+
+run_synthesis
+
+#Before running pre_sta.conf make sure your pre_sta.conf takes the current run id after synthesis which is in my case 08-04_01-29
+sta pre_sta.conf
+```
+-max slack reduced after reducing buffer size to 4
+
+<img src="day4/Screenshot from 2025-04-08 07-35-26.png"  width="800"/>
+
+-Doing ECO to replace connections having having high input signal transitions and output capacitance
+
+<img src="day4/Screenshot from 2025-04-08 07-43-13.png"  width="800"/>
+
+<img src="day4/Screenshot from 2025-04-08 07-55-44.png"  width="800"/>
+
+<img src="day4/Screenshot from 2025-04-08 07-55-56.png"  width="800"/>
+
+After applying timing ECO (Engineering Change Order) fixes, the updated netlist needs to be integrated back into the physical design flow.
+
+- First, **create a backup** of the original synthesized netlist for safety.
+- Use the `write_verilog` command to **generate the new netlist** reflecting the ECO changes.
+- Replace the old synthesis netlist with the newly generated one.
+
+Now, proceed with the remaining stages:
+- **Floorplanning**
+- **Placement**
+- **Clock Tree Synthesis (CTS)**
+
+>  Always ensure the updated netlist is functionally and logically equivalent before moving to the next stages in the PnR flow.
+
+``` bash 
+# Change from home directory to synthesis results directory
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/08-04_01-29/results/synthesis/
+ls
+
+# Copy and rename the netlist
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+
+
+# Overwriting current synthesis netlist(in the terminal where pre_sta.conf was run
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/28-03_10-01/results/synthesis/picorv32a.synthesis.v
+
+```
+<img src="day4/Screenshot from 2025-04-08 08-59-15.png"  width="800"/>
+
+-Now enter openlane terminal by creating docker instance
+
+```bash
+#run following in openlane and check if slack improves
+
+# to prep design so as to update variables
+prep -design picorv32a -tag 08-04_01-29 -overwrite
+
+# include newly added lef to openlane flow merged.lef
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+set ::env(SYNTH_SIZING) 1
+
+set ::env(SYNTH_MAX_FANOUT) 4
+
+run_synthesis
+
+init_floorplan
+place_io
+tap_decap_or
+
+#run placement
+run_placement
+
+# With placement done we are now ready to run CTS
+run_cts
+```
+
+<img src="day4/Screenshot from 2025-04-08 09-09-43.png"  width="800"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
