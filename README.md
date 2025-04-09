@@ -522,7 +522,7 @@ echo $::env(SYNTH_DRIVING_CELL)
 run_synthesis
 ```
 
-<img src="day4/Screenshot from 2025-04-08 00-22-39.png" alt="The custom sky130_vsdinv in temp/merged.lef indicating the cell was successfully used during synthesis"  width="800"/>
+<img src="day4/Screenshot from 2025-04-08 02-46-00.png" alt="The custom sky130_vsdinv in temp/merged.lef indicating the cell was successfully used during synthesis"  width="800"/>
 
 
 
