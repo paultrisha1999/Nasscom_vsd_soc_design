@@ -435,16 +435,32 @@ To understand and fix a DRC error (e.g., `poly.9`) in Magic, follow these steps:
   <img src="day3/Screenshot from 2025-04-07 03-46-35.png" alt="after fixing the drc violation in the file" width="800"/>
 
 
-
-
-
 ---
 
-### 🗓️ Day 4: Timing Analysis and Clock Distribution
+### 🗓️ Day 4: Pre-layout timing analysis and importance of good clock tree
 
 - Pre-layout vs post-layout timing
 - Importance of CTS and reducing clock skew
 - Worked with OpenSTA to analyze slack and critical paths
+
+- **Timing Table and Integration of Custom Cells in OpenLane**
+
+- The **timing table** models the **delay characteristics** of a standard cell based on two key factors:
+  - The **input signal transition time**
+  - The **output load capacitance**
+
+-  **Integrating Custom Standard Cell (`sky130_vsdinv`) into OpenLane**
+
+To incorporate the custom inverter design `sky130_vsdinv` into the OpenLane flow, the following files are required:
+
+- A **characterized `.lib` file**: This contains the timing, power, and functional information of the cell.
+- A **`.lef` file**: This provides the physical layout details like cell dimensions and pin placements.
+
+These files are generated and exported using the **Magic layout tool**, after completing the layout and running DRC/LVS.
+
+> ✅ Once both files are ready, they can be included in the OpenLane configuration to use the custom cell in digital synthesis and physical design flow.
+
+<img src="day4/Screenshot from 2025-04-08 00-22-39. " alt="tracks.info of sky130_fd_sc_hd" width="800"/>
 
 📷 *[Add your Day 4 image here]*
 
