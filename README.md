@@ -275,11 +275,27 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
   # - After selecting, use the "tkcon" window to run the command below for detailed info:
   #   what
 
+  #for creating spice file
+
+  #inside the magic tkconsole
+  extract all
+
+  # creates cell.ext file
+  ext2spice
+
+  # creates spice file
+
   ```
+  
+<img src="day3_1/Screenshot from 2025-04-06 18-52-04.png" alt="std cell magic gui" width="800"/>
+
+-Here we identify nmos,pmos,Drain to drain connection of nmos and pmos,Pwr to Pmos connection,Gnd to Nmos connection.
+
+<img src="day3_1/Screenshot from 2025-04-06 19-57-59.png " width="800"/>
 
   
 
-📷 *[Add your Day 3 image here]*
+
 
 ---
 
