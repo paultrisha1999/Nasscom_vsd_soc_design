@@ -254,26 +254,26 @@ magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/
 - Clone the custom inverter standard cell design from the GitHub repository: [nickson-jose/vsdstdcelldesign](https://github.com/nickson-jose/vsdstdcelldesign). 
 
   ```bash
-# Navigate to the OpenLane working directory
-cd ~/Desktop/work/tools/openlane_working_dir
+  #Navigate to the openlane working dir
+  cd ~/Desktop/work/tools/openlane_working_dir
 
-# Clone the custom standard cell inverter layout from GitHub
-git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+  #clone cudtom standard cell from github
+  git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 
-# Move into the cloned inverter design directory
-cd vsdstdcelldesign
+  # Move into the cloned inverter design directory
+  cd vsdstdcelldesign
 
-# Copy the required Magic technology file from the PDK directory into the current folder
-cp ../../pdks/sky130A/libs.tech/magic/sky130A.tech .
+  # Copy the required Magic technology file from the PDK directory into the current folder
+  cp ../../pdks/sky130A/libs.tech/magic/sky130A.tech .
 
-# Launch Magic with the custom inverter layout
-magic -T sky130A.tech sky130_inv.mag &
+  # Launch Magic with the custom inverter layout
+  magic -T sky130A.tech sky130_inv.mag &
 
-# In the Magic GUI:
-# - Press "s" to select the component under your cursor.
-# - Pressing "s" repeatedly selects all electrically connected components.
-# - After selecting, use the "tkcon" window to run the command below for detailed info:
-#   what
+  # In the Magic GUI:
+  # - Press "s" to select the component under your cursor.
+  # - Pressing "s" repeatedly selects all electrically connected components.
+  # - After selecting, use the "tkcon" window to run the command below for detailed info:
+  #   what
 
   ```
 
