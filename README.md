@@ -327,10 +327,10 @@ To prepare a SPICE deck from the file generated using the Magic GUI, follow thes
 <img src="day3_1/Screenshot from 2025-04-06 22-14-32.png " width="800"/>
 <img src="day3_1/Screenshot from 2025-04-06 22-13-40.png " width="800"/>
 
-###SPICE snippet
-
-<img src="day3_1/Screenshot from 2025-04-06 22-15-52.png " width="800"/>
+<img src="day3_1/Screenshot from 2025-04-06 22-15-52.png " alt="SPICE snippet" width="800"/>
 <img src="day3_1/Screenshot from 2025-04-07 00-58-09.png" width="800"/>
+<img src="day3_1/20250407_010500.jpg" width="800"/>
+
 
 
 ### Cell Timing Parameter Calculations-
@@ -356,14 +356,14 @@ Fall Time = Time taken for output to fall to 20% - Time taken for output to fall
 Propagation Delay = Time taken for output to rise to 50% - Time taken for input to fall to 50%
 
 - 50% of 3.3 V = 1.65 V
-  Propagation Delay = 2.185ns - 2.150ns = 0.035ns
+  Propagation Delay = 2.185ns - 2.149ns = 0.036ns
 
 ### Cell Fall Delay (tpLH)
 
 Cell Fall Delay = Time taken for output to fall to 50% - Time taken for input to rise to 50%
 
 - 50% of 3.3 V = 1.65 V
-  text{Cell Fall Delay} = 4.05467ns - 4.04998ns = 0.00469ns
+  Cell Fall Delay = 4.053ns - 4.049ns = 0.004ns
 
 
 ---
