@@ -21,6 +21,8 @@ A 5-day learning journey into the world of open-source digital design, focusing 
 ### How to Talk to Computers
 
 In this session, we explored the foundational concepts of communicating with computers, focusing on the architecture and components of integrated circuits.
+<img src="images/Screenshot 2025-03-29 231640.png" width="800"/>
+
 
 ---
 
