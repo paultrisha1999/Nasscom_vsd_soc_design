@@ -818,6 +818,86 @@ gen_pdn
 ```
 <img src="day5./Screenshot from 2025-04-08 18-17-40.png"  width="800"/>
 
+```bash
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/08-04_01-29/tmp/floorplan
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../merged.lef def read 25-pdn.def &
+```
+<img src="day5./Screenshot from 2025-04-08 20-58-55.png"  width="800"/>
+
+<img src="day5./Screenshot from 2025-04-08 21-00-45.png"  width="800"/>
+
+```bash
+#Perform detail routing using TritonRoute
+echo $::env(CURRENT_DEF)
+
+#Check value of 'ROUTING_STRATEGY'(it can have 5 values)
+echo $::env(ROUTING_STRATEGY)
+
+#detailed route using TritonRoute
+run_routing
+```
+**Here number of violations =0**
+<img src="day5./Screenshot from 2025-04-08 21-45-25.png"  width="800"/>
+
+<img src="day5./Screenshot from 2025-04-08 21-48-58.png"  width="800"/>
+
+```bash
+#visualizing def with magic
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/08-04_01-29/results/routing/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+
+<img src="day5./Screenshot from 2025-04-08 21-58-02.png"  width="800"/>
+
+<img src="day5./Screenshot from 2025-04-08 21-59-50.png"  width="800"/>
+
+-Post route the SPEF extraction and STA happens with run_routing command
+
+<img src="day5./Screenshot from 2025-04-08 21-52-56.png"  width="800"/>
+
+<img src="day5./Screenshot from 2025-04-08 21-53-29.png"  width="800"/>
+
+-verify the results using OpenRoad tool and check if hold and setup slack is met
+
+```bash
+openroad
+
+# Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/08-04_01-29/tmp/merged.lef
+
+# Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/08-04_01-29/results/routing/picorv32a.def
+
+# Creating an OpenROAD database to work with
+write_db pico_route.db
+
+# Loading the created database in OpenROAD
+read_db pico_route.db
+
+# Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/08-04_01-29/results/synthesis/picorv32a.synthesis_preroute.v
+
+# Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+# Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+# Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+# Read SPEF
+read_spef /openLANE_flow/designs/picorv32a/runs/08-04_01-29/results/routing/picorv32a.spef
+
+# Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+# Exit to OpenLANE flow
+exit
+```
+
 ---
 
 ## 🧰 Tools Used
