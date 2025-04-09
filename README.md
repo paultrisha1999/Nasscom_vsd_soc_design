@@ -470,6 +470,9 @@ cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
 # Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_inv.mag &
+
+#write lef file
+lef write
 ```
 
 
