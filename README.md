@@ -474,6 +474,8 @@ magic -T sky130A.tech sky130_inv.mag &
 #write lef file
 lef write
 ```
+<img src="day4/Screenshot from 2025-04-08 00-38-03.png"  width="800"/>
+<img src="day4/Screenshot from 2025-04-08 00-45-44.png"  width="800"/>
 
 
 
