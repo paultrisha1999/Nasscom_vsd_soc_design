@@ -22,7 +22,6 @@ A 5-day learning journey into the world of open-source digital design, focusing 
 
 In this session, we explored the foundational concepts of communicating with computers, focusing on the architecture and components of integrated circuits.
 
-<img src="images/Screenshot 2025-03-29 231640.png" width="800"/>
 
 
 ---
@@ -35,6 +34,8 @@ In this session, we explored the foundational concepts of communicating with com
   - **Core**: The heart of the IC where computation happens.
   - **Die**: The silicon wafer that holds the chip.
   - **IPs**: Pre-designed modules integrated into SoCs.
+ 
+    <img src="images/Screenshot 2025-03-29 231640.png" width="800"/>
 
 ---
 
@@ -51,6 +52,8 @@ In this session, we explored the foundational concepts of communicating with com
 
 - Automates synthesis, floorplanning, placement, CTS, routing, and DRC/LVS checks.
 - Uses **Sky130 PDK** for fabrication-compatible design rules.
+
+<img src="images/Screenshot 2025-04-01 110009.png" width="800"/>
 
 ---
 
